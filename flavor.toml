@@ -65,7 +65,7 @@ permissions_s = { fg = "#5d5d5d" }
 
 # : Select {{{
 
-[select]
+[pick]
 border = { fg = "#5d5d5d" }
 active = { fg = "#9d9d9d", bold = true }
 inactive = {}
@@ -80,6 +80,20 @@ border = { fg = "#5d5d5d" }
 title = {}
 value = {}
 selected = { reversed = true }
+#
+# : }}}
+
+
+# : Confirm {{{
+
+[confirm]
+border = { fg = "#5d5d5d" }
+title = { fg = "#9d9d9d" }
+content = {}
+list = {}
+btn_yes = { reversed = true }
+btn_no = {}
+btn_labels = ["  [Y]es  ", "  (N)o  "]
 
 # : }}}
 
@@ -88,6 +102,13 @@ selected = { reversed = true }
 
 [completion]
 border = { fg = "#5d5d5d" }
+active = { reversed = true }
+inactive = {}
+
+# Icons
+icon_file = ""
+icon_folder = ""
+icon_command = ""
 
 # : }}}
 
@@ -105,6 +126,7 @@ hovered = { fg = "#9d9d9d", underline = true }
 # : Which {{{
 
 [which]
+cols = 3
 mask = { bg = "#2a2a2a" }
 cand = { fg = "#9bb09b" }
 rest = { fg = "#707070" }
@@ -120,6 +142,7 @@ separator_style = { fg = "#414141" }
 [help]
 on = { fg = "#9bb09b" }
 run = { fg = "#9d9d9d" }
+desc = {}
 hovered = { reversed = true, bold = true }
 footer = { fg = "#353535", bg = "#b3b3b3" }
 
@@ -133,6 +156,11 @@ title_info = { fg = "#778777" }
 title_warn = { fg = "#c8a492" }
 title_error = { fg = "#b07878" }
 
+# Icons
+icon_info = ""
+icon_warn = ""
+icon_error = ""
+
 # : }}}
 
 
@@ -141,22 +169,33 @@ title_error = { fg = "#b07878" }
 [filetype]
 
 rules = [
-	# Images
-	{ mime = "image/*", fg = "#7d96ad" },
+  # Images
+  { mime = "image/*", fg = "#707070" },
 
-	# Media
-	{ mime = "{audio,video}/*", fg = "#d6caab" },
+  # Media
+  { mime = "{audio,video}/*", fg = "#707070" },
 
-	# Archives
-	{ mime = "application/*zip", fg = "#b3b3b3" },
-	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#b3b3b3" },
+  # Archives
+  { mime = "application/*zip", fg = "#b3b3b3" },
+  { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#b3b3b3" },
 
-	# Documents
-	{ mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#778777" },
+  # Documents
+  { mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#5d5d5d" },
 
-	# Fallback
-	{ name = "*", fg = "#878787" },
-	{ name = "*/", fg = "#8e8b85" },
+  # Empty files
+  { mime = "inode/x-empty", fg = "#b07878" },
+
+  # Special files
+  { name = "*", is = "orphan", bg = "#b07878" },
+  { name = "*", is = "exec", fg = "#dcdcdc" },
+
+  # Dummy files
+  { name = "*", is = "dummy", bg = "#b07878" },
+  { name = "*/", is = "dummy", bg = "#b07878" },
+
+  # Fallback
+  { name = "*", fg = "#878787" },
+  { name = "*/", fg = "#8e8b85" },
 ]
 
 # : }}}
