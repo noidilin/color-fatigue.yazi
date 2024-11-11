@@ -1,3 +1,7 @@
+# A TOML linter such as https://taplo.tamasfe.dev/ can use this schema to validate your config.
+# If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
+# "$schema" = "https://yazi-rs.github.io/schemas/theme.json"
+
 # vim:fileencoding=utf-8:foldmethod=marker
 
 # : Manager {{{
@@ -63,7 +67,7 @@ permissions_s = { fg = "#5d5d5d" }
 # : }}}
 
 
-# : Select {{{
+# : Pick {{{
 
 [pick]
 border = { fg = "#5d5d5d" }
@@ -80,7 +84,7 @@ border = { fg = "#5d5d5d" }
 title = {}
 value = {}
 selected = { reversed = true }
-#
+
 # : }}}
 
 
@@ -93,7 +97,7 @@ content = {}
 list = {}
 btn_yes = { reversed = true }
 btn_no = {}
-btn_labels = ["  [Y]es  ", "  (N)o  "]
+btn_labels = ["  [Y]es  ", "  [N]o  "]
 
 # : }}}
 
