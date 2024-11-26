@@ -211,7 +211,7 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>Tag Class &amp; ID</string>
+			<string>Tag Class and ID</string>
 			<key>scope</key>
 			<string>entity.name.tag.class, entity.name.tag.id</string>
 			<key>settings</key>
@@ -422,7 +422,7 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>CSS: Variable &amp; Function</string>
+			<string>CSS: Variable and Function</string>
 			<key>scope</key>
 			<string>variable.css, variable.scss, variable.less, variable.sass, function.css, function.scss, function.less, function.sass</string>
 			<key>settings</key>
@@ -529,13 +529,46 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>JSON Property &amp; String</string>
+			<string>JSON and Other Left-hand Assignments</string>
 			<key>scope</key>
-			<string>support.dictionary.json, support.type.property-name.json</string>
+			<string>keyword.other.definition.ini, support.type.property-name.json, support.type.property-name.toml, support.type.property-name.yaml</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
 				<string>#9d9d9d</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>JSON property values (string)</string>
+			<key>scope</key>
+			<string>meta.structure.dictionary.value.json, string.quoted.double</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#878787</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Strings in JSON values</string>
+			<key>scope</key>
+			<string>string.quoted.double.json, punctuation.definition.string.json</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#707070</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Specific JSON Property values like null</string>
+			<key>scope</key>
+			<string>meta.structure.dictionary.json</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#5d5d5d</string>
 			</dict>
 		</dict>
 		<dict>
@@ -595,7 +628,7 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>Diff: Ignored &amp; Untracked</string>
+			<string>Diff: Ignored and Untracked</string>
 			<key>scope</key>
 			<string>markup.ignored, markup.untracked</string>
 			<key>settings</key>

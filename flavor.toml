@@ -48,13 +48,13 @@ separator_close = ""
 separator_style = { fg = "#353535", bg = "#353535" }
 
 # Mode
-mode_normal = { fg = "#1e1e1e", bg = "#707070", bold = true }
+mode_normal = { fg = "#1e1e1e", bg = "#686868", bold = true }
 mode_select = { fg = "#1e1e1e", bg = "#eaeaea", bold = true }
 mode_unset = { fg = "#1e1e1e", bg = "#c8a492", bold = true }
 
 # Progress
 progress_label = { fg = "#cccccc", bold = true }
-progress_normal = { fg = "#707070", bg = "#353535" }
+progress_normal = { fg = "#686868", bg = "#353535" }
 progress_error = { fg = "#b07878", bg = "#353535" }
 
 # Permissions
@@ -174,17 +174,17 @@ icon_error = ""
 
 rules = [
   # Images
-  { mime = "image/*", fg = "#707070" },
+  { mime = "image/*", fg = "#5d5d5d" },
 
   # Media
-  { mime = "{audio,video}/*", fg = "#707070" },
+  { mime = "{audio,video}/*", fg = "#5d5d5d" },
 
   # Archives
-  { mime = "application/*zip", fg = "#b3b3b3" },
-  { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#b3b3b3" },
+  { mime = "application/*zip", fg = "#707070" },
+  { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#707070" },
 
   # Documents
-  { mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#5d5d5d" },
+  { mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#686868" },
 
   # Empty files
   { mime = "inode/x-empty", fg = "#b07878" },
@@ -198,8 +198,8 @@ rules = [
   { name = "*/", is = "dummy", bg = "#b07878" },
 
   # Fallback
-  { name = "*", fg = "#878787" },
-  { name = "*/", fg = "#8e8b85" },
+  { name = "*", fg = "#7f7f7f" },
+  { name = "*/", fg = "#7f7f7f" },
 ]
 
 # : }}}
