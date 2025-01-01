@@ -37,6 +37,27 @@ count_selected = { fg = "#1e1e1e", bg = "#eaeaea" }
 border_symbol = "│"
 border_style = { fg = "#5d5d5d" }
 
+# Highlighting
+syntect_theme = ""
+
+# : }}}
+
+
+# : Mode {{{
+
+[mode]
+
+normal_main = { fg = "#1e1e1e", bg = "#686868", bold = true }
+normal_alt = { fg = "#1e1e1e", bg = "#686868" }
+
+# Select mode
+select_main = { fg = "#1e1e1e", bg = "#eaeaea", bold = true }
+select_alt = { fg = "#1e1e1e", bg = "#eaeaea" }
+
+# Unset mode
+unset_main = { fg = "#1e1e1e", bg = "#c8a492", bold = true }
+unset_alt = { fg = "#1e1e1e", bg = "#c8a492" }
+
 # : }}}
 
 
@@ -47,27 +68,65 @@ separator_open = ""
 separator_close = ""
 separator_style = { fg = "#353535", bg = "#353535" }
 
-# Mode
-mode_normal = { fg = "#1e1e1e", bg = "#686868", bold = true }
-mode_select = { fg = "#1e1e1e", bg = "#eaeaea", bold = true }
-mode_unset = { fg = "#1e1e1e", bg = "#c8a492", bold = true }
-
 # Progress
 progress_label = { fg = "#cccccc", bold = true }
 progress_normal = { fg = "#686868", bg = "#353535" }
 progress_error = { fg = "#b07878", bg = "#353535" }
 
 # Permissions
-permissions_t = { fg = "#7d96ad" }
-permissions_r = { fg = "#d6caab" }
-permissions_w = { fg = "#b07878" }
-permissions_x = { fg = "#778777" }
-permissions_s = { fg = "#5d5d5d" }
+perm_sep = { fg = "#5d5d5d" }
+perm_type = { fg = "#7d96ad" }
+perm_read = { fg = "#d6caab" }
+perm_write = { fg = "#b07878" }
+perm_exec = { fg = "#778777" }
 
 # : }}}
 
 
-# : Pick {{{
+# : Which {{{
+
+[which]
+cols = 3
+mask = { bg = "#2a2a2a" }
+cand = { fg = "#9bb09b" }
+rest = { fg = "#707070" }
+desc = { fg = "#9d9d9d" }
+separator = "  "
+separator_style = { fg = "#414141" }
+
+# : }}}
+
+
+# : Confirmation {{{
+
+[confirm]
+border = { fg = "#5d5d5d" }
+title = { fg = "#9d9d9d" }
+content = {}
+list = {}
+btn_yes = { reversed = true }
+btn_no = {}
+btn_labels = ["  [Y]es  ", "  [N]o  "]
+
+# : }}}
+
+
+# : Notification {{{
+
+[notify]
+title_info = { fg = "#778777" }
+title_warn = { fg = "#c8a492" }
+title_error = { fg = "#b07878" }
+
+# Icons
+icon_info = ""
+icon_warn = ""
+icon_error = ""
+
+# : }}}
+
+
+# : Picker {{{
 
 [pick]
 border = { fg = "#5d5d5d" }
@@ -84,20 +143,6 @@ border = { fg = "#5d5d5d" }
 title = {}
 value = {}
 selected = { reversed = true }
-
-# : }}}
-
-
-# : Confirm {{{
-
-[confirm]
-border = { fg = "#5d5d5d" }
-title = { fg = "#9d9d9d" }
-content = {}
-list = {}
-btn_yes = { reversed = true }
-btn_no = {}
-btn_labels = ["  [Y]es  ", "  [N]o  "]
 
 # : }}}
 
@@ -127,20 +172,6 @@ hovered = { fg = "#9d9d9d", underline = true }
 # : }}}
 
 
-# : Which {{{
-
-[which]
-cols = 3
-mask = { bg = "#2a2a2a" }
-cand = { fg = "#9bb09b" }
-rest = { fg = "#707070" }
-desc = { fg = "#9d9d9d" }
-separator = "  "
-separator_style = { fg = "#414141" }
-
-# : }}}
-
-
 # : Help {{{
 
 [help]
@@ -149,21 +180,6 @@ run = { fg = "#9d9d9d" }
 desc = {}
 hovered = { reversed = true, bold = true }
 footer = { fg = "#353535", bg = "#b3b3b3" }
-
-# : }}}
-
-
-# : Notify {{{
-
-[notify]
-title_info = { fg = "#778777" }
-title_warn = { fg = "#c8a492" }
-title_error = { fg = "#b07878" }
-
-# Icons
-icon_info = ""
-icon_warn = ""
-icon_error = ""
 
 # : }}}
 
@@ -181,13 +197,13 @@ rules = [
 
   # Archives
   { mime = "application/*zip", fg = "#707070" },
-  { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#707070" },
+  { mime = "application/{tar,bzip*,7z-compressed,xz,rar}", fg = "#707070" },
 
   # Documents
   { mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#686868" },
 
   # Empty files
-  { mime = "inode/x-empty", fg = "#b07878" },
+  { mime = "inode/empty", fg = "#b07878" },
 
   # Special files
   { name = "*", is = "orphan", bg = "#b07878" },
