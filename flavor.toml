@@ -6,7 +6,7 @@
 
 # : Manager {{{
 
-[manager]
+[mgr]
 cwd = { fg = "#5d5d5d", bold = true, underline = true }
 
 # Hovered
@@ -23,11 +23,6 @@ marker_cut = { fg = "#b07878", bg = "#b07878" }
 marker_marked = { fg = "#d6caab", bg = "#d6caab" }
 marker_selected = { fg = "#eaeaea", bg = "#eaeaea" }
 
-# Tab
-tab_active = { reversed = true }
-tab_inactive = {}
-tab_width = 1
-
 # Count
 count_copied = { fg = "#1e1e1e", bg = "#778777" }
 count_cut = { fg = "#1e1e1e", bg = "#b07878" }
@@ -37,11 +32,25 @@ count_selected = { fg = "#1e1e1e", bg = "#eaeaea" }
 border_symbol = "│"
 border_style = { fg = "#5d5d5d" }
 
+# Symlink
+symlink_target = { italic = true }
+
 # Highlighting
 syntect_theme = ""
 
 # : }}}
 
+# : Tabs {{{
+
+[tabs]
+active = { bg = "#1e1e1e", bold = true }
+inactive = { fg = "#1e1e1e", bg = "#686868" }
+
+# Separator
+sep_inner = { open = "", close = "" }
+sep_outer = { open = "", close = "" }
+
+# : }}}
 
 # : Mode {{{
 
@@ -111,6 +120,19 @@ btn_labels = ["  [Y]es  ", "  [N]o  "]
 # : }}}
 
 
+# : Spotter {{{
+
+[spot]
+border = { fg = "#5d5d5d" }
+title = { fg = "#9d9d9d" }
+
+# Table
+tbl_col = { fg = "#5d5d5d" }
+tbl_cell = { fg = "#707070", reversed = true }
+
+# : }}}
+
+
 # : Notification {{{
 
 [notify]
@@ -149,7 +171,7 @@ selected = { reversed = true }
 
 # : Completion {{{
 
-[completion]
+[cmp]
 border = { fg = "#5d5d5d" }
 active = { reversed = true }
 inactive = {}
